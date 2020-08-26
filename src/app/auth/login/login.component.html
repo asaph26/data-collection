@@ -1,0 +1,9 @@
+<div class="login-box">
+    <p *ngIf="loading">Loading...</p>
+    <form [formGroup]="loginForm" *ngIf="!loading">
+        <input placeholder="Email" type="email" formControlName="email" />
+        <input placeholder="Password" type="password" formControlName="password" />
+        <p *ngIf="!!errorMessage" style="color: red">{{ errorMessage }}</p>
+        <button [disabled]="!loginForm.valid" (click)="login()">LOGIN</button>
+    </form>
+</div>

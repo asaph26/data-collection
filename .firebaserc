@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "fir-interns": {
+      "hosting": {
+        "observable-demo": [
+          "fir-interns"
+        ]
+      }
+    }
+  }
+}
