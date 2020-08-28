@@ -1,16 +1,20 @@
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { environment } from 'src/environments/environment';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing';
-import { HomeComponent } from './home/home.component';
+
 @NgModule({
-    declarations: [AppComponent, HomeComponent],
+    declarations: [AppComponent],
     imports: [
         BrowserModule,
         AngularFireModule.initializeApp(environment.firebase),
         AppRoutingModule,
+        BrowserAnimationsModule,
+        AngularFireDatabaseModule,
     ],
     providers: [],
     bootstrap: [AppComponent],

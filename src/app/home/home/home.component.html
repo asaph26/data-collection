@@ -1,0 +1,20 @@
+<mat-form-field>
+    <input matInput placeholder="Search" />
+</mat-form-field>
+
+<ng-template #loading>
+    <p>Loading...</p>
+</ng-template>
+<ng-container *ngIf="allPatients | async; let patients" ; else loading>
+    <mat-list>
+        <ng-container *ngFor="let patient of patients; let last = last">
+            <mat-list-item>
+                <h3 matLine>{{ patient.personalDetails.name }}</h3>
+                <p matLine>
+                    {{ patient.personalDetails.nationality }} | Age: {{ patient.personalDetails.age }}
+                </p>
+            </mat-list-item>
+            <mat-divider *ngIf="!last"></mat-divider>
+        </ng-container>
+    </mat-list>
+</ng-container>
